@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width. initial-scale=1.0">
+        <title>Will You be my Valentine?</title>
+        <link rel="stylesheet" href="indexV.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <!-- Bear GIF -->
+
+            <!-- Valentine question -->
+            <h1 class="valentine-text">Will You Be My Valentine? 💖</h1>
+
+            <!-- Additional images showcasing photos -->
+            <div class="photos">
+                <img src="photo1.jpg" alt="photo 1" class="photo">
+                <img src="photo2.jpg" alt="photo 2" class="photo">
+                <img src="photo3.jpg" alt="photo 3" class="photo">
+            </div>
+        </div>
+
+        <div class="button-container">
+            <div class="left-bottom-buttons">
+                <a href="YES.html" class="button yes-button">YES</a>
+                <a href="NO.html" class="button no-button" id="no-button">NO</a>
+                <a href="Faqs.html" class="button faq-button">FAQs</a>
+            </div>
+        </div>
+        <!-- Floating hearts -->
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const noButton = document.getElementById("no-button");
+        let buttonSize = 27; // Initial font size
+        let buttonWidth = 230; // Initial width
+        let buttonHeight = 50; // Initial height
+
+        // Prevent clicking
+        noButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Stops the button from working
+        });
+
+        // Move & Shrink the button when hovered
+        noButton.addEventListener("mouseover", function () {
+            const screenWidth = window.innerWidth - noButton.clientWidth;
+            const screenHeight = window.innerHeight - noButton.clientHeight;
+
+            const newX = Math.random() * screenWidth;
+            const newY = Math.random() * screenHeight;
+
+            noButton.style.position = "absolute";
+            noButton.style.left = `${newX}px`;
+            noButton.style.top = `${newY}px`;
+
+            // Reduce button size (and make it disappear when too small)
+            if (buttonSize > 5 && buttonWidth > 50 && buttonHeight > 20) { 
+                buttonSize -= 2;
+                buttonWidth -= 15;  
+                buttonHeight -= 5;   
+
+                noButton.style.fontSize = `${buttonSize}px`;
+                noButton.style.width = `${buttonWidth}px`;
+                noButton.style.height = `${buttonHeight}px`;
+                noButton.style.padding = `${buttonSize / 2}px ${buttonSize}px`;
+            } else {
+                noButton.style.display = "none"; // Make it disappear when too small
+            }
+        });
+    });
+</script>
+
+        
+    </body>
+</html>

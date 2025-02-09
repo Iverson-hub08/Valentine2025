@@ -1,0 +1,199 @@
+/* Beautiful Valentine background */
+body {
+    font-family: 'Dancing Script', cursive; /* Romantic handwritten font */
+    background: linear-gradient(to bottom right, #ff758c, #ff7eb3); /* Pink gradient */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Container for centering content */
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center; 
+    justify-content: center; 
+    height: 60vh;
+    position: relative;
+}
+
+/* Cute bear GIF */
+.logo {
+    width: 120px; /* Slightly smaller for a cuter look */
+    height: auto;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+/* Beautiful Valentine text */
+h1 {
+    font-size: 40px;
+    color: #ff3366;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Photos section (showcasing memories) */
+.photos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.photo {
+    width: 160px;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.1); /* Cute hover effect */
+}
+
+/* Button styles */
+.button {
+    width: 200px;
+    height: 50px; 
+    padding: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    margin: 8px;
+    border-radius: 15px;
+    border: 2px solid black;
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* YES button (cute green) */
+.yes-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.yes-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* NO button (red & moving) */
+.no-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.no-button:hover {
+    transform: scale(0.8); /* Shrinks slightly before running away */
+}
+
+/* FAQs button */
+.faq-button {
+    background-color: #ff9800;
+    color: white;
+}
+
+.faq-button:hover {
+    background-color: #e68900;
+    transform: scale(1.1);
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.left-bottom-buttons {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes glowingText {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.7; transform: scale(1); }
+}
+
+/* Floating hearts animation */
+/* Floating hearts animation - they rise upwards */
+@keyframes floating-hearts {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px) scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Floating heart elements */
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff3366;
+    clip-path: polygon(50% 15%, 80% 0%, 100% 20%, 90% 50%, 50% 90%, 10% 50%, 0% 20%, 20% 0%);
+    opacity: 0.8;
+    animation: floating-hearts 5s infinite ease-in-out;
+}
+
+/* Randomized heart positions and animation duration */
+.heart:nth-child(1) { left: 20%; animation-duration: 6s; }
+.heart:nth-child(2) { left: 50%; animation-duration: 5s; }
+.heart:nth-child(3) { left: 80%; animation-duration: 7s; }
+.heart:nth-child(4) { left: 10%; animation-duration: 8s; }
+.heart:nth-child(5) { left: 70%; animation-duration: 6.5s; }
+/* Ensures everything scales properly on small screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        overflow-x: hidden; /* Prevents side scrolling */
+    }
+
+    .container, .faq-container, .letter-container {
+        width: 95%; /* Adjusts width to fit screen */
+        max-width: 450px; /* Prevents being too wide */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px; /* Adjust title size */
+    }
+
+    .button {
+        width: 100%; /* Makes buttons full width */
+        font-size: 20px; /* Adjust button text */
+    }
+
+    .photo {
+        width: 120px; /* Smaller images */
+        height: auto;
+    }
+
+    /* Fix floating hearts on smaller screens */
+    .heart {
+        width: 12px;
+        height: 12px;
+    }
+}

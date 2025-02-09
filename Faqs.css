@@ -1,0 +1,191 @@
+/* Valentine-themed background */
+body {
+    font-family: 'Dancing Script', cursive; /* Romantic handwritten font */
+    background: linear-gradient(to bottom right, #ff758c, #ff7eb3); /* Soft pink gradient */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for FAQs */
+.faq-container {
+    max-width: 650px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light pinkish-white */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+/* Romantic title */
+h1 {
+    font-size: 30px;
+    color: #ff3366; /* Deep romantic pink */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ items */
+.faq-item {
+    margin-bottom: 15px;
+}
+
+/* Question buttons */
+.question {
+    background-color: #ff99aa; /* Soft pink */
+    border: none;
+    padding: 12px 20px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for question buttons */
+.question:hover {
+    background-color: #ff6680; /* Darker pink */
+    transform: scale(1.05);
+}
+
+/* Answers */
+.answer {
+    display: none;
+    padding: 10px;
+    background: #fff0f3;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Toggle effect */
+.question:focus + .answer {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animation for answers */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heart animation floating in background */
+@keyframes floating-hearts {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff3366;
+    clip-path: polygon(50% 15%, 80% 0%, 100% 20%, 90% 50%, 50% 90%, 10% 50%, 0% 20%, 20% 0%);
+    opacity: 0.7;
+    animation: floating-hearts 3s infinite ease-in-out;
+}
+
+/* Randomized heart positions */
+.heart:nth-child(1) {
+    left: 20%;
+    animation-duration: 4s;
+}
+.heart:nth-child(2) {
+    left: 50%;
+    animation-duration: 3s;
+}
+.heart:nth-child(3) {
+    left: 80%;
+    animation-duration: 5s;
+}
+.heart:nth-child(4) {
+    left: 10%;
+    animation-duration: 6s;
+}
+.heart:nth-child(5) {
+    left: 70%;
+    animation-duration: 4.5s;
+}
+
+/* Back button */
+.back-button {
+    display: inline-block;
+    background-color: #ff3366;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #ff6680;
+    transform: scale(1.1);
+}
+/* Ensures everything scales properly on small screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        overflow-x: hidden; /* Prevents side scrolling */
+    }
+
+    .container, .faq-container, .letter-container {
+        width: 95%; /* Adjusts width to fit screen */
+        max-width: 450px; /* Prevents being too wide */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px; /* Adjust title size */
+    }
+
+    .button {
+        width: 100%; /* Makes buttons full width */
+        font-size: 20px; /* Adjust button text */
+    }
+
+    .photo {
+        width: 120px; /* Smaller images */
+        height: auto;
+    }
+
+    /* Fix floating hearts on smaller screens */
+    .heart {
+        width: 12px;
+        height: 12px;
+    }
+}
+
